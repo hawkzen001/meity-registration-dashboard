@@ -87,6 +87,9 @@ def norm_qual(v):
 
 # ── 1. Load Existing Enrollment Data ─────────────────────────────────────────
 ENROLL_DIR = Path("Exisiting Enrollment Data - Animation Department")
+if not ENROLL_DIR.exists():
+    ENROLL_DIR = Path("Existing Enrollment Data - Animation Department")
+
 FILE_NAME_COLS = {
     "_Animation Batches 25-26.xlsx":   [4, 16, 27],
     "Ani - MeitY Batches 24-25.xlsx":  [4, 16, 27],
@@ -144,11 +147,17 @@ def is_enrolled_match(name):
         enw = set(en.split())
         common = nw & enw
         shorter = min(len(nw), len(enw))
+        
+        # Filter out ESDP enrollments
+        valid_enrollments = [d for d in data_list if "ESDP" not in str(d.get("course", "")).upper()]
+        if not valid_enrollments:
+            continue
+            
         if nw == enw:
-            matched_enrollments = [f"exact: '{d['name']}' | {d['course']} | #{d['enrollment_no']}" for d in data_list]
+            matched_enrollments = [f"exact: '{d['name']}' | {d['course']} | #{d['enrollment_no']}" for d in valid_enrollments]
             return True, " || ".join(matched_enrollments)
         if len(common) >= 2 and shorter > 0 and len(common) / shorter >= 0.75:
-            matched_enrollments = [f"fuzzy: '{d['name']}' | {d['course']} | #{d['enrollment_no']}" for d in data_list]
+            matched_enrollments = [f"fuzzy: '{d['name']}' | {d['course']} | #{d['enrollment_no']}" for d in valid_enrollments]
             return True, " || ".join(matched_enrollments)
     return False, ""
 
