@@ -148,19 +148,23 @@ export default function CandidateProfileModal({ applicant, onClose }) {
               <div className="flex-1">
                 <p className="font-bold text-amber-200">Already Enrolled in IDEMI Animation Department</p>
                 {applicant.enrollment_match_detail?.includes(' | ') ? (
-                  <div className="mt-2 space-y-1.5 p-2.5 rounded bg-amber-950/30 border border-amber-500/20">
-                    <div className="flex items-start gap-2">
-                      <span className="text-amber-500/70 font-semibold w-24 shrink-0">Course:</span>
-                      <span className="text-amber-300 font-medium">{applicant.enrollment_match_detail.split(' | ')[1]}</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-amber-500/70 font-semibold w-24 shrink-0">Enrollment No:</span>
-                      <span className="text-amber-300 font-mono">{applicant.enrollment_match_detail.split(' | ')[2]?.replace('#', '')}</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-amber-500/70 font-semibold w-24 shrink-0">Match Type:</span>
-                      <span className="text-amber-400/80 capitalize">{applicant.enrollment_match_detail.split(' | ')[0]}</span>
-                    </div>
+                  <div className="mt-2 space-y-2">
+                    {applicant.enrollment_match_detail.split(' || ').map((match, idx) => (
+                      <div key={idx} className="p-2.5 rounded bg-amber-950/30 border border-amber-500/20 space-y-1.5">
+                        <div className="flex items-start gap-2">
+                          <span className="text-amber-500/70 font-semibold w-24 shrink-0">Course:</span>
+                          <span className="text-amber-300 font-medium">{match.split(' | ')[1]}</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <span className="text-amber-500/70 font-semibold w-24 shrink-0">Enrollment No:</span>
+                          <span className="text-amber-300 font-mono">{match.split(' | ')[2]?.replace('#', '')}</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <span className="text-amber-500/70 font-semibold w-24 shrink-0">Match Type:</span>
+                          <span className="text-amber-400/80 capitalize">{match.split(' | ')[0]}</span>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 ) : (
                   <p className="text-[11px] text-amber-400/80 mt-0.5">

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T06:22:17",
+  "generated_at": "2026-10-01T12:16:02",
   "source": "Google Sheets Live Sync",
   "total_records": 1964,
   "already_enrolled_count": 270,
@@ -2429,7 +2429,7 @@
       "id": 85,
       "sheet": "Main Data",
       "timestamp": "7/23/2024 14:29:54",
-      "name": "Sahil",
+      "name": "Sahil Kailas Gore",
       "email": "sahilgore68@gmail.com",
       "father_name": "Kailas",
       "gender": "Male",
@@ -10031,7 +10031,7 @@
       },
       "doc_count": 5,
       "already_enrolled_at_idemi": true,
-      "enrollment_match_detail": "exact: 'Mr. Tejas Rajendra Angre' | VFX Associate (MeitY Scheme) | #243720326"
+      "enrollment_match_detail": "exact: 'Mr. Tejas Rajendra Angre' | VFX Associate (MeitY Scheme) | #243720326 || exact: 'Mr. Tejas Rajendra Angre' | VFX Associate (MeitY Scheme) | #243720326"
     },
     {
       "id": 358,
@@ -10668,7 +10668,7 @@
       },
       "doc_count": 5,
       "already_enrolled_at_idemi": true,
-      "enrollment_match_detail": "exact: 'Ms. Shivani Sanjay Nagrale' | VFX Associate (MeitY Scheme) | #243720313"
+      "enrollment_match_detail": "exact: 'Ms. Shivani Sanjay Nagrale' | VFX Associate (MeitY Scheme) | #243720313 || exact: 'Ms. Shivani Sanjay Nagrale' | VFX Associate (MeitY Scheme) | #243720313"
     },
     {
       "id": 381,
@@ -10750,7 +10750,7 @@
       },
       "doc_count": 4,
       "already_enrolled_at_idemi": true,
-      "enrollment_match_detail": "exact: 'Ms. Rajashri Gajanan Padhel' | VFX Associate (MeitY Scheme) | #243720316"
+      "enrollment_match_detail": "exact: 'Ms. Rajashri Gajanan Padhel' | VFX Associate (MeitY Scheme) | #243720316 || exact: 'Ms. Rajashri Gajanan Padhel' | VFX Associate (MeitY Scheme) | #243720316"
     },
     {
       "id": 384,
@@ -13027,7 +13027,7 @@
       },
       "doc_count": 5,
       "already_enrolled_at_idemi": true,
-      "enrollment_match_detail": "exact: 'Ms. Samrudhi Prakash Sonawane' | VFX Associate (MeitY Scheme) | #243720312"
+      "enrollment_match_detail": "exact: 'Ms. Samrudhi Prakash Sonawane' | VFX Associate (MeitY Scheme) | #243720312 || exact: 'Ms. Samrudhi Prakash Sonawane' | VFX Associate (MeitY Scheme) | #243720312"
     },
     {
       "id": 466,

@@ -125,11 +125,13 @@ if ENROLL_DIR.exists():
                                             c_name = str(row1[i]).strip()
                                             break
                                     
-                                    enrolled_data[nname] = {
+                                    if nname not in enrolled_data:
+                                        enrolled_data[nname] = []
+                                    enrolled_data[nname].append({
                                         "name": val,
                                         "course": c_name,
                                         "enrollment_no": en_no
-                                    }
+                                    })
         except Exception as e:
             print(f"Warning loading {fname}: {e}")
 
@@ -138,14 +140,16 @@ print(f"Extracted {len(enrolled_data)} unique enrolled student names from IDEMI 
 def is_enrolled_match(name):
     nw = set(norm(name).split())
     if not nw: return False, ""
-    for en, data in enrolled_data.items():
+    for en, data_list in enrolled_data.items():
         enw = set(en.split())
         common = nw & enw
         shorter = min(len(nw), len(enw))
         if nw == enw:
-            return True, f"exact: '{data['name']}' | {data['course']} | #{data['enrollment_no']}"
+            matched_enrollments = [f"exact: '{d['name']}' | {d['course']} | #{d['enrollment_no']}" for d in data_list]
+            return True, " || ".join(matched_enrollments)
         if len(common) >= 2 and shorter > 0 and len(common) / shorter >= 0.75:
-            return True, f"fuzzy: '{data['name']}' | {data['course']} | #{data['enrollment_no']}"
+            matched_enrollments = [f"fuzzy: '{d['name']}' | {d['course']} | #{d['enrollment_no']}" for d in data_list]
+            return True, " || ".join(matched_enrollments)
     return False, ""
 
 # ── 2. Fetch CSV ─────────────────────────────────────────────────────────────
