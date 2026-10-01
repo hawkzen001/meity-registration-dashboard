@@ -14,7 +14,11 @@ import {
   Mail,
   User,
   MapPin,
-  Sparkles
+  Sparkles,
+  UserCheck,
+  UserPlus,
+  BadgeCheck,
+  AlertTriangle
 } from 'lucide-react';
 
 export default function ApplicantsTable({ records = [], onSelectApplicant }) {
@@ -23,7 +27,7 @@ export default function ApplicantsTable({ records = [], onSelectApplicant }) {
   const [categoryFilter, setCategoryFilter] = useState('All');
   const [genderFilter, setGenderFilter] = useState('All');
   const [qualFilter, setQualFilter] = useState('All');
-  const [sheetFilter, setSheetFilter] = useState('All');
+  const [enrollmentFilter, setEnrollmentFilter] = useState('All');
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(25);
 
@@ -36,10 +40,6 @@ export default function ApplicantsTable({ records = [], onSelectApplicant }) {
   const categoryOptions = ['All', 'SC', 'OBC', 'EWS', 'General (Women)', 'General', 'ST'];
   const genderOptions = ['All', 'Female', 'Male', 'Transgender', 'Other'];
   const qualOptions = ['All', '12th / ITI', 'Degree / Graduation', 'Diploma', '10th Pass'];
-  const sheetOptions = useMemo(() => {
-    const set = new Set(records.map(r => r.sheet).filter(Boolean));
-    return ['All', ...Array.from(set)];
-  }, [records]);
 
   // Filter records based on active criteria
   const filteredRecords = useMemo(() => {
@@ -70,17 +70,18 @@ export default function ApplicantsTable({ records = [], onSelectApplicant }) {
       // Qualification filter
       if (qualFilter !== 'All' && rec.qualification !== qualFilter) return false;
 
-      // Sheet filter
-      if (sheetFilter !== 'All' && rec.sheet !== sheetFilter) return false;
+      // Enrollment Status filter
+      if (enrollmentFilter === 'NotEnrolled' && rec.already_enrolled_at_idemi) return false;
+      if (enrollmentFilter === 'AlreadyEnrolled' && !rec.already_enrolled_at_idemi) return false;
 
       return true;
     });
-  }, [records, searchTerm, courseFilter, categoryFilter, genderFilter, qualFilter, sheetFilter]);
+  }, [records, searchTerm, courseFilter, categoryFilter, genderFilter, qualFilter, enrollmentFilter]);
 
   // Reset pagination on filter change
   React.useEffect(() => {
     setCurrentPage(1);
-  }, [searchTerm, courseFilter, categoryFilter, genderFilter, qualFilter, sheetFilter, rowsPerPage]);
+  }, [searchTerm, courseFilter, categoryFilter, genderFilter, qualFilter, enrollmentFilter, rowsPerPage]);
 
   // Calculate Pagination
   const totalPages = Math.ceil(filteredRecords.length / rowsPerPage) || 1;
@@ -119,10 +120,11 @@ export default function ApplicantsTable({ records = [], onSelectApplicant }) {
       'Course',
       'Reference / How Heard',
       'Full Permanent Address',
+      'IDEMI Enrollment Status',
+      'Enrollment Match Detail',
       'Documents Uploaded',
     ];
 
-    // Safely wrap a value in CSV quotes
     const q = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`;
 
     const rows = [cols.join(',')];
@@ -144,11 +146,12 @@ export default function ApplicantsTable({ records = [], onSelectApplicant }) {
         q(r.course),
         q(r.reference),
         q(r.address),
+        r.already_enrolled_at_idemi ? "Already Enrolled at IDEMI" : "Not Enrolled (Fresh Lead)",
+        q(r.enrollment_match_detail),
         r.doc_count ?? 0,
       ].join(','));
     });
 
-    // UTF-8 BOM ensures Excel opens with correct encoding
     const BOM = '\uFEFF';
     const csvString = BOM + rows.join('\r\n');
     const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
@@ -157,12 +160,13 @@ export default function ApplicantsTable({ records = [], onSelectApplicant }) {
     const link = document.createElement('a');
     link.style.display = 'none';
     link.href = url;
-    link.download = `MeitY_Registrations_${new Date().toISOString().slice(0, 10)}.csv`;
+    
+    const filterSuffix = enrollmentFilter === 'NotEnrolled' ? '_FreshLeads' : enrollmentFilter === 'AlreadyEnrolled' ? '_Enrolled' : '';
+    link.download = `MeitY_Registrations${filterSuffix}_${new Date().toISOString().slice(0, 10)}.csv`;
 
     document.body.appendChild(link);
     link.click();
 
-    // Clean up after the browser has processed the click
     setTimeout(() => {
       document.body.removeChild(link);
       URL.revokeObjectURL(url);
@@ -192,12 +196,12 @@ export default function ApplicantsTable({ records = [], onSelectApplicant }) {
           className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white text-xs font-semibold px-4 py-2 rounded-lg shadow-sm transition-all self-start lg:self-auto"
         >
           <Download className="w-4 h-4" />
-          <span>Export Filtered CSV</span>
+          <span>Export Filtered CSV ({filteredRecords.length})</span>
         </button>
       </div>
 
       {/* Search & Multi-Filter Toolbar */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-3 mb-6">
         
         {/* Search Box */}
         <div className="lg:col-span-2 relative">
@@ -209,6 +213,19 @@ export default function ApplicantsTable({ records = [], onSelectApplicant }) {
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-9 pr-3 py-2 text-xs rounded-lg bg-[var(--bg-card)] border border-[var(--border-color)] text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-indigo-500 transition-colors"
           />
+        </div>
+
+        {/* Enrollment Status Filter (Fresh Leads vs Already Enrolled) */}
+        <div>
+          <select
+            value={enrollmentFilter}
+            onChange={(e) => setEnrollmentFilter(e.target.value)}
+            className="w-full py-2 px-3 text-xs rounded-lg bg-indigo-950/40 border border-indigo-500/40 font-semibold text-indigo-300 focus:outline-none focus:border-indigo-400"
+          >
+            <option value="All">All Enrollment Status</option>
+            <option value="NotEnrolled">🟢 Fresh Leads (Not Enrolled)</option>
+            <option value="AlreadyEnrolled">⚠️ Already Enrolled in IDEMI</option>
+          </select>
         </div>
 
         {/* Course Filter */}
@@ -276,18 +293,19 @@ export default function ApplicantsTable({ records = [], onSelectApplicant }) {
             <tr className="bg-[var(--bg-card)] border-b border-[var(--border-color)] text-[var(--text-secondary)] font-semibold uppercase tracking-wider">
               <th className="py-3 px-4">#</th>
               <th className="py-3 px-4">Candidate Details</th>
+              <th className="py-3 px-4">Enrollment Status</th>
               <th className="py-3 px-4">Category / Gender</th>
               <th className="py-3 px-4">Course Track</th>
               <th className="py-3 px-4">Qualification</th>
               <th className="py-3 px-4">Contact</th>
-              <th className="py-3 px-4 text-center">Docs Uploaded</th>
+              <th className="py-3 px-4 text-center">Docs</th>
               <th className="py-3 px-4 text-right">Actions</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-[var(--border-color)]">
             {paginatedRecords.length === 0 ? (
               <tr>
-                <td colSpan="8" className="py-12 text-center text-[var(--text-muted)]">
+                <td colSpan="9" className="py-12 text-center text-[var(--text-muted)]">
                   No applicant records found matching your filters.
                 </td>
               </tr>
@@ -295,7 +313,7 @@ export default function ApplicantsTable({ records = [], onSelectApplicant }) {
               paginatedRecords.map((applicant, index) => (
                 <tr 
                   key={applicant.id} 
-                  className="hover:bg-[var(--bg-card-hover)] transition-colors group"
+                  className={`hover:bg-[var(--bg-card-hover)] transition-colors group ${applicant.already_enrolled_at_idemi ? 'bg-amber-950/10' : ''}`}
                 >
                   <td className="py-3.5 px-4 font-semibold text-[var(--text-muted)]">
                     {startIndex + index + 1}
@@ -319,6 +337,21 @@ export default function ApplicantsTable({ records = [], onSelectApplicant }) {
                       <Mail className="w-3 h-3 text-[var(--text-muted)]" />
                       {applicant.email || 'N/A'}
                     </div>
+                  </td>
+
+                  {/* Enrollment Status Badge */}
+                  <td className="py-3.5 px-4">
+                    {applicant.already_enrolled_at_idemi ? (
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-500/15 text-amber-400 border border-amber-500/30" title={`Matched IDEMI records: ${applicant.enrollment_match_detail}`}>
+                        <AlertTriangle className="w-3 h-3" />
+                        Already Enrolled
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                        <UserPlus className="w-3 h-3" />
+                        Fresh Lead
+                      </span>
+                    )}
                   </td>
 
                   {/* Category / Gender */}
@@ -355,13 +388,13 @@ export default function ApplicantsTable({ records = [], onSelectApplicant }) {
 
                   {/* Documents Count */}
                   <td className="py-3.5 px-4 text-center">
-                    <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold ${
+                    <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold ${
                       applicant.doc_count > 0 
                         ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
                         : 'bg-[var(--bg-primary)] text-[var(--text-muted)] border border-[var(--border-color)]'
                     }`}>
                       <Paperclip className="w-3 h-3" />
-                      {applicant.doc_count} Files
+                      {applicant.doc_count}
                     </span>
                   </td>
 

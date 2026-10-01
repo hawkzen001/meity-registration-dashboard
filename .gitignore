@@ -10,3 +10,4 @@ scratch_*.py
 scratch_*.json
 scratch_*.txt
 *.xlsx
+!Exisiting Enrollment Data - Animation Department/*.xlsx

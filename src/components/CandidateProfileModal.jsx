@@ -139,6 +139,33 @@ export default function CandidateProfileModal({ applicant, onClose }) {
         {/* ── Scrollable Body ──────────────────────────────────────── */}
         <div className="overflow-y-auto flex-1 p-6 space-y-6">
 
+          {/* ── Section: IDEMI Enrollment Verification Status ────── */}
+          {applicant.already_enrolled_at_idemi ? (
+            <div className="flex items-center gap-3 p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs">
+              <div className="p-2 rounded-lg bg-amber-500/20 text-amber-400 shrink-0">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="font-bold text-amber-200">Already Enrolled in IDEMI Animation Department</p>
+                <p className="text-[11px] text-amber-400/80 mt-0.5">
+                  Matched in last 3 academic years ({applicant.enrollment_match_detail || 'Exact name match'}). Exclude from new recruitment outreach.
+                </p>
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-center gap-3 p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs">
+              <div className="p-2 rounded-lg bg-emerald-500/20 text-emerald-400 shrink-0">
+                <BadgeCheck className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="font-bold text-emerald-200">Fresh Candidate / Not Yet Enrolled</p>
+                <p className="text-[11px] text-emerald-400/80 mt-0.5">
+                  No prior enrollment record found in IDEMI Animation files. Recommended for Academic Counsellor outreach!
+                </p>
+              </div>
+            </div>
+          )}
+
           {/* ── Section: Personal Information ────────────────────── */}
           <div>
             <p className="text-[10px] font-bold uppercase tracking-widest text-indigo-400 mb-3 flex items-center gap-1.5">

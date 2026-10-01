@@ -7,15 +7,20 @@ import {
   Layers, 
   FileCheck,
   TrendingUp,
-  Briefcase
+  Briefcase,
+  UserPlus,
+  CheckCircle2,
+  AlertCircle
 } from 'lucide-react';
 
 export default function MetricCards({ dataSummary }) {
   const total = dataSummary?.total_records || dataSummary?.totalRecords || 0;
+  const alreadyEnrolledCount = dataSummary?.already_enrolled_count || 0;
+  const newLeadsCount = dataSummary?.not_enrolled_count || (total - alreadyEnrolledCount);
+
   const genderCounts = dataSummary?.gender_counts || dataSummary?.genderCounts || {};
   const categoryCounts = dataSummary?.category_counts || dataSummary?.categoryCounts || {};
   const courseCounts = dataSummary?.course_counts || dataSummary?.courseCounts || {};
-  const qualificationCounts = dataSummary?.qualification_counts || dataSummary?.qualificationCounts || {};
 
   const femaleCount = genderCounts['Female'] || 0;
   const femalePct = total ? ((femaleCount / total) * 100).toFixed(1) : 0;
@@ -25,59 +30,101 @@ export default function MetricCards({ dataSummary }) {
   const ewsCount = categoryCounts['EWS'] || 0;
   const genWomenCount = categoryCounts['General (Women)'] || 0;
   const genCount = categoryCounts['General'] || 0;
-  const stCount = categoryCounts['ST'] || 0;
 
-  const activeCoursesCount = Object.keys(courseCounts).filter(c => c !== 'Other / Unspecified').length;
-  const degreeGradCount = qualificationCounts['Degree / Graduation'] || 0;
+  const newLeadsPct = total ? ((newLeadsCount / total) * 100).toFixed(1) : 0;
 
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
       
       {/* Total Registrations Card */}
-      <div className="glass-card glass-card-hover p-5 relative overflow-hidden group">
-        <div className="absolute top-0 right-0 w-24 h-24 bg-indigo-500/10 rounded-full blur-xl group-hover:bg-indigo-500/20 transition-all"></div>
-        <div className="flex items-center justify-between mb-3">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)]">
-            Total Registrations
+      <div className="glass-card glass-card-hover p-4 relative overflow-hidden group">
+        <div className="absolute top-0 right-0 w-20 h-20 bg-indigo-500/10 rounded-full blur-xl group-hover:bg-indigo-500/20 transition-all"></div>
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-[11px] font-semibold uppercase tracking-wider text-[var(--text-secondary)]">
+            Total Applications
           </span>
-          <div className="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-            <Users className="w-5 h-5" />
+          <div className="p-2 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+            <Users className="w-4 h-4" />
           </div>
         </div>
-        <div className="flex items-baseline gap-2 mb-2">
-          <span className="text-3xl font-extrabold brand-font text-[var(--text-primary)]">
+        <div className="flex items-baseline gap-2 mb-1">
+          <span className="text-2xl font-extrabold brand-font text-[var(--text-primary)]">
             {total.toLocaleString()}
           </span>
-          <span className="text-xs font-semibold text-emerald-400 flex items-center gap-0.5">
-            <TrendingUp className="w-3.5 h-3.5" /> +100%
-          </span>
         </div>
-        <p className="text-xs text-[var(--text-muted)]">
-          Live sync from Google Sheets · Main Data
+        <p className="text-[11px] text-[var(--text-muted)] truncate">
+          Verified with documents
         </p>
       </div>
 
-      {/* Female Applicants Card */}
-      <div className="glass-card glass-card-hover p-5 relative overflow-hidden group">
-        <div className="absolute top-0 right-0 w-24 h-24 bg-pink-500/10 rounded-full blur-xl group-hover:bg-pink-500/20 transition-all"></div>
-        <div className="flex items-center justify-between mb-3">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)]">
-            Female Enrollment
+      {/* New Leads for Counsellor Card */}
+      <div className="glass-card glass-card-hover p-4 relative overflow-hidden group border-emerald-500/30">
+        <div className="absolute top-0 right-0 w-20 h-20 bg-emerald-500/10 rounded-full blur-xl group-hover:bg-emerald-500/20 transition-all"></div>
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-400">
+            Fresh Leads (Counsel)
           </span>
-          <div className="p-2.5 rounded-xl bg-pink-500/10 text-pink-400 border border-pink-500/20">
-            <UserCheck className="w-5 h-5" />
+          <div className="p-2 rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+            <UserPlus className="w-4 h-4" />
           </div>
         </div>
-        <div className="flex items-baseline gap-2 mb-2">
-          <span className="text-3xl font-extrabold brand-font text-[var(--text-primary)]">
-            {femaleCount.toLocaleString()}
+        <div className="flex items-baseline gap-2 mb-1">
+          <span className="text-2xl font-extrabold brand-font text-emerald-400">
+            {newLeadsCount.toLocaleString()}
           </span>
-          <span className="text-xs font-semibold text-pink-400">
-            {femalePct}% ratio
+          <span className="text-[11px] font-semibold text-emerald-400/90">
+            {newLeadsPct}%
           </span>
         </div>
-        {/* Progress Bar */}
-        <div className="w-full bg-[var(--border-color)] h-1.5 rounded-full overflow-hidden">
+        <p className="text-[11px] text-[var(--text-muted)] truncate">
+          Not yet enrolled in IDEMI
+        </p>
+      </div>
+
+      {/* Already Enrolled Card */}
+      <div className="glass-card glass-card-hover p-4 relative overflow-hidden group">
+        <div className="absolute top-0 right-0 w-20 h-20 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-[11px] font-semibold uppercase tracking-wider text-amber-400">
+            Already Enrolled
+          </span>
+          <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
+            <CheckCircle2 className="w-4 h-4" />
+          </div>
+        </div>
+        <div className="flex items-baseline gap-2 mb-1">
+          <span className="text-2xl font-extrabold brand-font text-[var(--text-primary)]">
+            {alreadyEnrolledCount.toLocaleString()}
+          </span>
+          <span className="text-[11px] font-semibold text-amber-400">
+            {((alreadyEnrolledCount / (total || 1)) * 100).toFixed(1)}%
+          </span>
+        </div>
+        <p className="text-[11px] text-[var(--text-muted)] truncate">
+          Animation Dept (Last 3 Yrs)
+        </p>
+      </div>
+
+      {/* Female Enrollment Card */}
+      <div className="glass-card glass-card-hover p-4 relative overflow-hidden group">
+        <div className="absolute top-0 right-0 w-20 h-20 bg-pink-500/10 rounded-full blur-xl group-hover:bg-pink-500/20 transition-all"></div>
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-[11px] font-semibold uppercase tracking-wider text-[var(--text-secondary)]">
+            Female Applicants
+          </span>
+          <div className="p-2 rounded-xl bg-pink-500/10 text-pink-400 border border-pink-500/20">
+            <UserCheck className="w-4 h-4" />
+          </div>
+        </div>
+        <div className="flex items-baseline gap-2 mb-1">
+          <span className="text-2xl font-extrabold brand-font text-[var(--text-primary)]">
+            {femaleCount.toLocaleString()}
+          </span>
+          <span className="text-[11px] font-semibold text-pink-400">
+            {femalePct}%
+          </span>
+        </div>
+        <div className="w-full bg-[var(--border-color)] h-1.5 rounded-full overflow-hidden mt-1">
           <div 
             className="bg-gradient-to-r from-pink-500 to-rose-400 h-full rounded-full transition-all duration-500" 
             style={{ width: `${femalePct}%` }}
@@ -85,49 +132,25 @@ export default function MetricCards({ dataSummary }) {
         </div>
       </div>
 
-      {/* Category Breakdown Summary Card */}
-      <div className="glass-card glass-card-hover p-5 relative overflow-hidden group">
-        <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
-        <div className="flex items-center justify-between mb-3">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)]">
-            Category Breakdown
+      {/* Category Breakdown Card */}
+      <div className="glass-card glass-card-hover p-4 relative overflow-hidden group">
+        <div className="absolute top-0 right-0 w-20 h-20 bg-cyan-500/10 rounded-full blur-xl group-hover:bg-cyan-500/20 transition-all"></div>
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-[11px] font-semibold uppercase tracking-wider text-[var(--text-secondary)]">
+            Category Matrix
           </span>
-          <div className="p-2.5 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
-            <Layers className="w-5 h-5" />
+          <div className="p-2 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+            <Layers className="w-4 h-4" />
           </div>
         </div>
-        <div className="flex items-center gap-1.5 flex-wrap">
-          <span className="badge badge-sc" title="Scheduled Caste">SC: {scCount}</span>
-          <span className="badge badge-obc" title="Other Backward Class">OBC: {obcCount}</span>
-          <span className="badge badge-ews" title="Economically Weaker Section">EWS: {ewsCount}</span>
-          <span className="badge badge-gen" title="General & Women">Gen/W: {genWomenCount + genCount}</span>
+        <div className="flex items-center gap-1 flex-wrap text-[10px]">
+          <span className="badge badge-sc">SC: {scCount}</span>
+          <span className="badge badge-obc">OBC: {obcCount}</span>
+          <span className="badge badge-ews">EWS: {ewsCount}</span>
+          <span className="badge badge-gen">Gen: {genWomenCount + genCount}</span>
         </div>
-        <p className="text-xs text-[var(--text-muted)] mt-2.5">
-          Government reservation seat coverage
-        </p>
-      </div>
-
-      {/* NSQF Certified Courses Card */}
-      <div className="glass-card glass-card-hover p-5 relative overflow-hidden group">
-        <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl group-hover:bg-emerald-500/20 transition-all"></div>
-        <div className="flex items-center justify-between mb-3">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)]">
-            NSQF Courses Active
-          </span>
-          <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-            <Award className="w-5 h-5" />
-          </div>
-        </div>
-        <div className="flex items-baseline gap-2 mb-2">
-          <span className="text-3xl font-extrabold brand-font text-[var(--text-primary)]">
-            {activeCoursesCount}
-          </span>
-          <span className="text-xs font-medium text-[var(--text-secondary)]">
-            Certified Tracks
-          </span>
-        </div>
-        <p className="text-xs text-[var(--text-muted)]">
-          Graphics, VFX, Animation & Mechatronics
+        <p className="text-[10px] text-[var(--text-muted)] mt-1">
+          Quota distribution
         </p>
       </div>
 

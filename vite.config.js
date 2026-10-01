@@ -10,6 +10,18 @@ export default defineConfig({
   ],
   server: {
     port: 3000,
-    open: false
+    open: false,
+    watch: {
+      // Exclude locked/binary files that Vite should never watch
+      ignored: [
+        '**/*.xlsx',
+        '**/*.xls',
+        '**/scratch_*.py',
+        '**/scratch_*.json',
+        '**/scratch_*.txt',
+        '**/Exisiting Enrollment Data*/**',
+      ]
+    }
   }
 });
+
