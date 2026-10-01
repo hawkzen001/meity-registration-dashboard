@@ -141,15 +141,33 @@ export default function CandidateProfileModal({ applicant, onClose }) {
 
           {/* ── Section: IDEMI Enrollment Verification Status ────── */}
           {applicant.already_enrolled_at_idemi ? (
-            <div className="flex items-center gap-3 p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs">
+            <div className="flex items-start gap-3 p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs">
               <div className="p-2 rounded-lg bg-amber-500/20 text-amber-400 shrink-0">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <div>
+              <div className="flex-1">
                 <p className="font-bold text-amber-200">Already Enrolled in IDEMI Animation Department</p>
-                <p className="text-[11px] text-amber-400/80 mt-0.5">
-                  Matched in last 3 academic years ({applicant.enrollment_match_detail || 'Exact name match'}). Exclude from new recruitment outreach.
-                </p>
+                {applicant.enrollment_match_detail?.includes(' | ') ? (
+                  <div className="mt-2 space-y-1.5 p-2.5 rounded bg-amber-950/30 border border-amber-500/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-amber-500/70 font-semibold w-24 shrink-0">Course:</span>
+                      <span className="text-amber-300 font-medium">{applicant.enrollment_match_detail.split(' | ')[1]}</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-amber-500/70 font-semibold w-24 shrink-0">Enrollment No:</span>
+                      <span className="text-amber-300 font-mono">{applicant.enrollment_match_detail.split(' | ')[2]?.replace('#', '')}</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-amber-500/70 font-semibold w-24 shrink-0">Match Type:</span>
+                      <span className="text-amber-400/80 capitalize">{applicant.enrollment_match_detail.split(' | ')[0]}</span>
+                    </div>
+                  </div>
+                ) : (
+                  <p className="text-[11px] text-amber-400/80 mt-0.5">
+                    Matched in last 3 academic years ({applicant.enrollment_match_detail || 'Exact name match'}). 
+                  </p>
+                )}
+                <p className="text-[11px] text-amber-500/80 mt-2 font-medium">Exclude from new recruitment outreach.</p>
               </div>
             </div>
           ) : (

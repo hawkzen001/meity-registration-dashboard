@@ -93,7 +93,7 @@ FILE_NAME_COLS = {
     "Animation Batches 26-27.xlsx":    [4, 15, 27, 38, 49],
 }
 
-enrolled_names = set()
+enrolled_data = {}
 if ENROLL_DIR.exists():
     for xlsx in sorted(ENROLL_DIR.glob("*.xlsx")):
         fname = xlsx.name
@@ -102,6 +102,7 @@ if ENROLL_DIR.exists():
             wb = openpyxl.load_workbook(xlsx, data_only=True)
             for sname in wb.sheetnames:
                 ws = wb[sname]
+                row1 = [cell.value for cell in ws[1]]
                 for row in ws.iter_rows(min_row=3, values_only=True):
                     if not row: continue
                     for c in cols:
@@ -110,23 +111,36 @@ if ENROLL_DIR.exists():
                             if val and not val.replace('.','').isdigit():
                                 nname = norm(val)
                                 if len(nname.split()) >= 2:
-                                    enrolled_names.add(nname)
+                                    en_no = row[c-2] if (c-2 >= 0 and c-2 < len(row)) else "N/A"
+                                    en_no = str(en_no).replace('.0', '').strip() if en_no else "N/A"
+                                    
+                                    c_name = "Unknown Course"
+                                    for i in range(c-1, -1, -1):
+                                        if i < len(row1) and row1[i] and str(row1[i]).strip():
+                                            c_name = str(row1[i]).strip()
+                                            break
+                                    
+                                    enrolled_data[nname] = {
+                                        "name": val,
+                                        "course": c_name,
+                                        "enrollment_no": en_no
+                                    }
         except Exception as e:
             print(f"Warning loading {fname}: {e}")
 
-print(f"Extracted {len(enrolled_names)} unique enrolled student names from IDEMI Animation files.")
+print(f"Extracted {len(enrolled_data)} unique enrolled student names from IDEMI Animation files.")
 
 def is_enrolled_match(name):
     nw = set(norm(name).split())
     if not nw: return False, ""
-    for en in enrolled_names:
+    for en, data in enrolled_data.items():
         enw = set(en.split())
         common = nw & enw
         shorter = min(len(nw), len(enw))
         if nw == enw:
-            return True, f"exact: '{en}'"
+            return True, f"exact: '{data['name']}' | {data['course']} | #{data['enrollment_no']}"
         if len(common) >= 2 and shorter > 0 and len(common) / shorter >= 0.75:
-            return True, f"fuzzy: '{en}'"
+            return True, f"fuzzy: '{data['name']}' | {data['course']} | #{data['enrollment_no']}"
     return False, ""
 
 # ── 2. Fetch CSV ─────────────────────────────────────────────────────────────
