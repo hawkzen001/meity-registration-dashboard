@@ -111,11 +111,16 @@ if ENROLL_DIR.exists():
                             if val and not val.replace('.','').isdigit():
                                 nname = norm(val)
                                 if len(nname.split()) >= 2:
-                                    en_no = row[c-2] if (c-2 >= 0 and c-2 < len(row)) else "N/A"
-                                    en_no = str(en_no).replace('.0', '').strip() if en_no else "N/A"
+                                    # Find enrollment number: First non-blank cell before the Name column
+                                    en_no = "N/A"
+                                    for i in range(c - 2, max(-1, c - 6), -1):
+                                        if i < len(row) and row[i] is not None and str(row[i]).strip() != "":
+                                            en_no = str(row[i]).replace('.0', '').strip()
+                                            break
                                     
+                                    # Find course name: First non-blank string before or at Name column in Row 1
                                     c_name = "Unknown Course"
-                                    for i in range(c-1, -1, -1):
+                                    for i in range(c - 1, -1, -1):
                                         if i < len(row1) and row1[i] and str(row1[i]).strip():
                                             c_name = str(row1[i]).strip()
                                             break
