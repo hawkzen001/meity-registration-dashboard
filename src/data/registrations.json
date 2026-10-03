@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-10-03T16:04:39",
+  "generated_at": "2026-10-03T20:55:10",
   "source": "Google Sheets Live Sync",
-  "total_records": 1964,
+  "total_records": 1965,
   "already_enrolled_count": 270,
-  "not_enrolled_count": 1694,
+  "not_enrolled_count": 1695,
   "gender_counts": {
     "Male": 1184,
-    "Female": 778,
+    "Female": 779,
     "Other": 1,
     "Transgender": 1
   },
   "category_counts": {
     "OBC": 567,
     "SC": 865,
-    "General (Women)": 332,
+    "General (Women)": 333,
     "EWS": 200
   },
   "course_counts": {
     "Multimedia and Animation Associate (NSQF Level 4)": 448,
     "VFX Associate (NSQF Level 4)": 258,
-    "3D Animator Assistant (NSQF Level 3)": 96,
+    "3D Animator Assistant (NSQF Level 3)": 97,
     "Jr. Web Designer (NSQF Level 4)": 123,
     "Graphics & Web Designer Assistant (NSQF Level 4)": 819,
     "Film Compositor Assistant (NSQF Level 4)": 34,
@@ -28,7 +28,7 @@
     "Other / Unspecified": 1
   },
   "qualification_counts": {
-    "12th / ITI": 972,
+    "12th / ITI": 973,
     "Degree / Graduation": 813,
     "Diploma": 132,
     "10th Pass": 46,
@@ -54753,6 +54753,33 @@
         "caste": "https://drive.google.com/open?id=1IwCVV-gjyJynEo4UH4vGKXqz2kk4C1d2"
       },
       "doc_count": 5,
+      "already_enrolled_at_idemi": false,
+      "enrollment_match_detail": ""
+    },
+    {
+      "id": 1965,
+      "sheet": "Main Data",
+      "timestamp": "10/3/2026 21:39:50",
+      "name": "Asha Gauda",
+      "email": "ashagauda03@gmail.com",
+      "father_name": "Simachal Gauda",
+      "gender": "Female",
+      "category": "General (Women)",
+      "raw_category": "General (Women)",
+      "dob": "2/28/2009",
+      "qualification": "12th / ITI",
+      "address": "Siddhivinayak teen baudi mahtre ali ghansoli goan",
+      "whatsapp": "8108512925",
+      "alt_phone": "8369566251",
+      "course": "3D Animator Assistant (NSQF Level 3)",
+      "reference": "Social media advertisement",
+      "documents": {
+        "hsc": "https://drive.google.com/open?id=1X0EgJrZwKI7VhMXKrvED20dOUI_-izMC",
+        "age_proof": "https://drive.google.com/open?id=19dNXb5X9sv4p9idYHW2G3hRx20rXzPft",
+        "photo": "https://drive.google.com/open?id=1SJu9to8CTA3Ljzk3vyksxbOt7kc6oX5C",
+        "identity": "https://drive.google.com/open?id=1DO1yUjKW0-UzZAO2knsHC5vlblgpeaGD"
+      },
+      "doc_count": 4,
       "already_enrolled_at_idemi": false,
       "enrollment_match_detail": ""
     }
