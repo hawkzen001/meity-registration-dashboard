@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-08T05:40:13",
+  "generated_at": "2026-10-08T13:13:29",
   "source": "Google Sheets Live Sync",
-  "total_records": 1967,
+  "total_records": 1968,
   "already_enrolled_count": 270,
-  "not_enrolled_count": 1697,
+  "not_enrolled_count": 1698,
   "gender_counts": {
     "Male": 1184,
-    "Female": 781,
+    "Female": 782,
     "Other": 1,
     "Transgender": 1
   },
   "category_counts": {
     "OBC": 568,
     "SC": 865,
-    "General (Women)": 334,
+    "General (Women)": 335,
     "EWS": 200
   },
   "course_counts": {
@@ -21,7 +21,7 @@
     "VFX Associate (NSQF Level 4)": 258,
     "3D Animator Assistant (NSQF Level 3)": 97,
     "Jr. Web Designer (NSQF Level 4)": 123,
-    "Graphics & Web Designer Assistant (NSQF Level 4)": 820,
+    "Graphics & Web Designer Assistant (NSQF Level 4)": 821,
     "Film Compositor Assistant (NSQF Level 4)": 34,
     "3D Printing": 143,
     "Sr. Technician -Mechatronics (NSQF Level 4.5)": 42,
@@ -29,7 +29,7 @@
   },
   "qualification_counts": {
     "12th / ITI": 974,
-    "Degree / Graduation": 814,
+    "Degree / Graduation": 815,
     "Diploma": 132,
     "10th Pass": 46,
     "m": 1
@@ -54835,6 +54835,33 @@
         "caste": "https://drive.google.com/open?id=1pr6wyvUpSBg0ALK_lT19l3TGXmJEdJ9a"
       },
       "doc_count": 5,
+      "already_enrolled_at_idemi": false,
+      "enrollment_match_detail": ""
+    },
+    {
+      "id": 1968,
+      "sheet": "Main Data",
+      "timestamp": "10/8/2026 14:27:06",
+      "name": "Lily Simanchal Gauda",
+      "email": "lilygouda845@gmail.com",
+      "father_name": "Simanchal Gauda",
+      "gender": "Female",
+      "category": "General (Women)",
+      "raw_category": "General (Women)",
+      "dob": "3/6/2001",
+      "qualification": "Degree / Graduation",
+      "address": "Siddhivinayak Soc. Teen bavdi Mhatre ali Ghansoli goan 400701",
+      "whatsapp": "9078448506",
+      "alt_phone": "8275748166",
+      "course": "Graphics & Web Designer Assistant (NSQF Level 4)",
+      "reference": "Sister",
+      "documents": {
+        "graduation": "https://drive.google.com/open?id=1vl-l0HYaMjOsepkK25Xm4mgUxrzoHfG4",
+        "age_proof": "https://drive.google.com/open?id=1WKbxPBSNPKYMeDcBmLqVR8Gy4ueqzv4c",
+        "photo": "https://drive.google.com/open?id=1domjaaRzfiKV1gu0llRMmDRvHwPCX7NF",
+        "identity": "https://drive.google.com/open?id=1TLtAvlF3pHUYrJFggmq-1QRIYlwTbwZw"
+      },
+      "doc_count": 4,
       "already_enrolled_at_idemi": false,
       "enrollment_match_detail": ""
     }
