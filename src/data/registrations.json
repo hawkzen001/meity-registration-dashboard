@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-10-09T13:00:07",
+  "generated_at": "2026-10-09T22:30:57",
   "source": "Google Sheets Live Sync",
-  "total_records": 1968,
+  "total_records": 1970,
   "already_enrolled_count": 270,
-  "not_enrolled_count": 1698,
+  "not_enrolled_count": 1700,
   "gender_counts": {
-    "Male": 1184,
-    "Female": 782,
+    "Male": 1185,
+    "Female": 783,
     "Other": 1,
     "Transgender": 1
   },
   "category_counts": {
-    "OBC": 568,
+    "OBC": 570,
     "SC": 865,
     "General (Women)": 335,
     "EWS": 200
   },
   "course_counts": {
-    "Multimedia and Animation Associate (NSQF Level 4)": 449,
+    "Multimedia and Animation Associate (NSQF Level 4)": 450,
     "VFX Associate (NSQF Level 4)": 258,
-    "3D Animator Assistant (NSQF Level 3)": 97,
+    "3D Animator Assistant (NSQF Level 3)": 98,
     "Jr. Web Designer (NSQF Level 4)": 123,
     "Graphics & Web Designer Assistant (NSQF Level 4)": 821,
     "Film Compositor Assistant (NSQF Level 4)": 34,
@@ -28,7 +28,7 @@
     "Other / Unspecified": 1
   },
   "qualification_counts": {
-    "12th / ITI": 974,
+    "12th / ITI": 976,
     "Degree / Graduation": 815,
     "Diploma": 132,
     "10th Pass": 46,
@@ -54862,6 +54862,62 @@
         "identity": "https://drive.google.com/open?id=1TLtAvlF3pHUYrJFggmq-1QRIYlwTbwZw"
       },
       "doc_count": 4,
+      "already_enrolled_at_idemi": false,
+      "enrollment_match_detail": ""
+    },
+    {
+      "id": 1969,
+      "sheet": "Main Data",
+      "timestamp": "10/9/2026 22:19:32",
+      "name": "Akshay Sanjay  Jadhav",
+      "email": "akkiartznagpur@gmail.com",
+      "father_name": "Sanjay Jadhav",
+      "gender": "Male",
+      "category": "OBC",
+      "raw_category": "Other Backward Class (OBC)",
+      "dob": "9/29/2003",
+      "qualification": "12th / ITI",
+      "address": "LALKHED , AMRAVATI",
+      "whatsapp": "7083901359",
+      "alt_phone": "7021267599",
+      "course": "Multimedia and Animation Associate (NSQF Level 4)",
+      "reference": "SUDAKSHI",
+      "documents": {
+        "hsc": "https://drive.google.com/open?id=1-Y6QqPod0_9K_jJ2Rh2Xcdt6npr0Squh",
+        "age_proof": "https://drive.google.com/open?id=1xqEBL2bne17wIye3ey5hF53jLPeYnB6e",
+        "photo": "https://drive.google.com/open?id=1x6bNmLRkXhROZMyqrS6QvRYv1Pr3NDu0",
+        "identity": "https://drive.google.com/open?id=12RBwehn-Xj1r_S-yC0Svbov4ITA3C0ZD",
+        "caste": "https://drive.google.com/open?id=1mu0ogYLHoPOFLkF7qa4phhmPa8kGJDMn"
+      },
+      "doc_count": 5,
+      "already_enrolled_at_idemi": false,
+      "enrollment_match_detail": ""
+    },
+    {
+      "id": 1970,
+      "sheet": "Main Data",
+      "timestamp": "10/9/2026 23:05:08",
+      "name": "Mayuri Mohanrao  Thakare",
+      "email": "archanathakare5656@gmail.com",
+      "father_name": "Mohanrao Thakare",
+      "gender": "Female",
+      "category": "OBC",
+      "raw_category": "Other Backward Class (OBC)",
+      "dob": "9/29/2003",
+      "qualification": "12th / ITI",
+      "address": "NAVSARI ,AMRAVATI",
+      "whatsapp": "7385041925",
+      "alt_phone": "9373320418",
+      "course": "3D Animator Assistant (NSQF Level 3)",
+      "reference": "AKSHAY",
+      "documents": {
+        "hsc": "https://drive.google.com/open?id=1xvG_YDtoh-wcdADjpcaVKVd20qsLMrZf",
+        "age_proof": "https://drive.google.com/open?id=1y7_yjntJwvzcvv3TifMpc06rJ76p6hK8",
+        "photo": "https://drive.google.com/open?id=1jm0fzcyPmxytEB2RKtFaMiIl6PTXM7jm",
+        "identity": "https://drive.google.com/open?id=1IkRVlofh7MtFrmJzt-ZeR-017HpsbNZh",
+        "caste": "https://drive.google.com/open?id=1yeo-PonCEe0gE8bGdt-Fg_neCmoFAlDA"
+      },
+      "doc_count": 5,
       "already_enrolled_at_idemi": false,
       "enrollment_match_detail": ""
     }
