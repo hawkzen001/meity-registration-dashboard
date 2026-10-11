@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-10-11T12:33:16",
+  "generated_at": "2026-10-11T21:44:21",
   "source": "Google Sheets Live Sync",
-  "total_records": 1970,
+  "total_records": 1971,
   "already_enrolled_count": 270,
-  "not_enrolled_count": 1700,
+  "not_enrolled_count": 1701,
   "gender_counts": {
-    "Male": 1185,
+    "Male": 1186,
     "Female": 783,
     "Other": 1,
     "Transgender": 1
   },
   "category_counts": {
     "OBC": 570,
-    "SC": 865,
+    "SC": 866,
     "General (Women)": 335,
     "EWS": 200
   },
   "course_counts": {
-    "Multimedia and Animation Associate (NSQF Level 4)": 450,
+    "Multimedia and Animation Associate (NSQF Level 4)": 451,
     "VFX Associate (NSQF Level 4)": 258,
     "3D Animator Assistant (NSQF Level 3)": 98,
     "Jr. Web Designer (NSQF Level 4)": 123,
@@ -29,7 +29,7 @@
   },
   "qualification_counts": {
     "12th / ITI": 976,
-    "Degree / Graduation": 815,
+    "Degree / Graduation": 816,
     "Diploma": 132,
     "10th Pass": 46,
     "m": 1
@@ -54916,6 +54916,34 @@
         "photo": "https://drive.google.com/open?id=1jm0fzcyPmxytEB2RKtFaMiIl6PTXM7jm",
         "identity": "https://drive.google.com/open?id=1IkRVlofh7MtFrmJzt-ZeR-017HpsbNZh",
         "caste": "https://drive.google.com/open?id=1yeo-PonCEe0gE8bGdt-Fg_neCmoFAlDA"
+      },
+      "doc_count": 5,
+      "already_enrolled_at_idemi": false,
+      "enrollment_match_detail": ""
+    },
+    {
+      "id": 1971,
+      "sheet": "Main Data",
+      "timestamp": "10/11/2026 23:15:29",
+      "name": "Sameer Anil Jambhulkar",
+      "email": "sameerjambhulkar58@gmail.com",
+      "father_name": "Anil Ramchandra Jambhulkar",
+      "gender": "Male",
+      "category": "SC",
+      "raw_category": "Scheduled Castes (SC)",
+      "dob": "11/5/1998",
+      "qualification": "Degree / Graduation",
+      "address": "Plot No 12 Babadeep Singh Nagar Near Old Kanch Company Nari Road Nagpur",
+      "whatsapp": "9767275467",
+      "alt_phone": "8237291310",
+      "course": "Multimedia and Animation Associate (NSQF Level 4)",
+      "reference": "Instagram Id Versatile Scientist",
+      "documents": {
+        "graduation": "https://drive.google.com/open?id=1JGbIjcAGVh4_LAri-yowHlblemADv5E0",
+        "age_proof": "https://drive.google.com/open?id=11cfGOrDYq5S5YuOwtq9spfee1vAniWjS",
+        "photo": "https://drive.google.com/open?id=1bL4QBTVbKBig24DuvWtX8kRC7RvOcO3L",
+        "identity": "https://drive.google.com/open?id=1DxPHKJ70HLpE5oYxiv2GNcdF2LwQQlfB",
+        "caste": "https://drive.google.com/open?id=1oDRlEhTmdEZNkn4bp-82flu-jADAsDQO"
       },
       "doc_count": 5,
       "already_enrolled_at_idemi": false,
