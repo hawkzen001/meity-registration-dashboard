@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-12T15:05:57",
+  "generated_at": "2026-10-13T00:28:41",
   "source": "Google Sheets Live Sync",
-  "total_records": 1972,
+  "total_records": 1973,
   "already_enrolled_count": 270,
-  "not_enrolled_count": 1702,
+  "not_enrolled_count": 1703,
   "gender_counts": {
     "Male": 1186,
-    "Female": 784,
+    "Female": 785,
     "Other": 1,
     "Transgender": 1
   },
   "category_counts": {
     "OBC": 571,
     "SC": 866,
-    "General (Women)": 335,
+    "General (Women)": 336,
     "EWS": 200
   },
   "course_counts": {
@@ -21,14 +21,14 @@
     "VFX Associate (NSQF Level 4)": 258,
     "3D Animator Assistant (NSQF Level 3)": 99,
     "Jr. Web Designer (NSQF Level 4)": 123,
-    "Graphics & Web Designer Assistant (NSQF Level 4)": 821,
+    "Graphics & Web Designer Assistant (NSQF Level 4)": 822,
     "Film Compositor Assistant (NSQF Level 4)": 34,
     "3D Printing": 143,
     "Sr. Technician -Mechatronics (NSQF Level 4.5)": 42,
     "Other / Unspecified": 1
   },
   "qualification_counts": {
-    "12th / ITI": 977,
+    "12th / ITI": 978,
     "Degree / Graduation": 816,
     "Diploma": 132,
     "10th Pass": 46,
@@ -54974,6 +54974,33 @@
         "caste": "https://drive.google.com/open?id=1q4o4Gkkft64K506zK_pzrhJvr5Bvg6Of"
       },
       "doc_count": 5,
+      "already_enrolled_at_idemi": false,
+      "enrollment_match_detail": ""
+    },
+    {
+      "id": 1973,
+      "sheet": "Main Data",
+      "timestamp": "10/13/2026 0:47:43",
+      "name": "Rushika Gamare",
+      "email": "gamarerushu@gmail.com",
+      "father_name": "Amol Gamre",
+      "gender": "Female",
+      "category": "General (Women)",
+      "raw_category": "General (Women)",
+      "dob": "9/26/2006",
+      "qualification": "12th / ITI",
+      "address": "Room no FN/G/65-96, Panchsheel nagar no 3 seva sang, opp anik depo, sion koliwada, Mumbai- 400022",
+      "whatsapp": "9004654206",
+      "alt_phone": "",
+      "course": "Graphics & Web Designer Assistant (NSQF Level 4)",
+      "reference": "Virendra",
+      "documents": {
+        "hsc": "https://drive.google.com/open?id=1zLOX2MPJnC0rOHSXU5iWePplL4wqjzfd",
+        "age_proof": "https://drive.google.com/open?id=1Oz_h3aEd1A7U1cbSSfc-PRtdiqtsrWUp",
+        "photo": "https://drive.google.com/open?id=1U67BxYo4ynVfnsWkrmoZCaOFhWh-56PT",
+        "identity": "https://drive.google.com/open?id=1X2OSpL1I2BSNbEfV6KswFDvBo-egVoNd"
+      },
+      "doc_count": 4,
       "already_enrolled_at_idemi": false,
       "enrollment_match_detail": ""
     }
