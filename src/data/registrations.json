@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-10-19T04:16:38",
+  "generated_at": "2026-10-19T12:49:07",
   "source": "Google Sheets Live Sync",
-  "total_records": 1973,
+  "total_records": 1974,
   "already_enrolled_count": 270,
-  "not_enrolled_count": 1703,
+  "not_enrolled_count": 1704,
   "gender_counts": {
     "Male": 1186,
-    "Female": 785,
+    "Female": 786,
     "Other": 1,
     "Transgender": 1
   },
   "category_counts": {
-    "OBC": 571,
+    "OBC": 572,
     "SC": 866,
     "General (Women)": 336,
     "EWS": 200
@@ -19,7 +19,7 @@
   "course_counts": {
     "Multimedia and Animation Associate (NSQF Level 4)": 451,
     "VFX Associate (NSQF Level 4)": 258,
-    "3D Animator Assistant (NSQF Level 3)": 99,
+    "3D Animator Assistant (NSQF Level 3)": 100,
     "Jr. Web Designer (NSQF Level 4)": 123,
     "Graphics & Web Designer Assistant (NSQF Level 4)": 822,
     "Film Compositor Assistant (NSQF Level 4)": 34,
@@ -29,7 +29,7 @@
   },
   "qualification_counts": {
     "12th / ITI": 978,
-    "Degree / Graduation": 816,
+    "Degree / Graduation": 817,
     "Diploma": 132,
     "10th Pass": 46,
     "m": 1
@@ -55001,6 +55001,34 @@
         "identity": "https://drive.google.com/open?id=1X2OSpL1I2BSNbEfV6KswFDvBo-egVoNd"
       },
       "doc_count": 4,
+      "already_enrolled_at_idemi": false,
+      "enrollment_match_detail": ""
+    },
+    {
+      "id": 1974,
+      "sheet": "Main Data",
+      "timestamp": "10/19/2026 11:44:02",
+      "name": "Komal",
+      "email": "komalkanade39@gmail.com",
+      "father_name": "Pramod",
+      "gender": "Female",
+      "category": "OBC",
+      "raw_category": "Other Backward Class (OBC)",
+      "dob": "7/30/1996",
+      "qualification": "Degree / Graduation",
+      "address": "Room no 301 putran Mukhtar chawal hall v",
+      "whatsapp": "8928264571",
+      "alt_phone": "892826571",
+      "course": "3D Animator Assistant (NSQF Level 3)",
+      "reference": "Advertise",
+      "documents": {
+        "graduation": "https://drive.google.com/open?id=1U2QH_6b622OULVaT80H0ZbZhQcYLhwH7",
+        "age_proof": "https://drive.google.com/open?id=1EExplCn1BvMPbHdQv0EmNwBh27mF5aIL",
+        "photo": "https://drive.google.com/open?id=12rfHCAoFGJRKCO0kH79Q9slpnmY4vu6w",
+        "identity": "https://drive.google.com/open?id=1dpTRvO6J4W575bDlshV5UDS7QDM_7CGt",
+        "caste": "https://drive.google.com/open?id=1cAMwZpb9xVARJ9UnW3zhJTnMQPqGM2Ie"
+      },
+      "doc_count": 5,
       "already_enrolled_at_idemi": false,
       "enrollment_match_detail": ""
     }
