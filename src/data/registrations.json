@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-10-23T11:24:06",
+  "generated_at": "2026-10-23T16:52:31",
   "source": "Google Sheets Live Sync",
-  "total_records": 1975,
+  "total_records": 1976,
   "already_enrolled_count": 270,
-  "not_enrolled_count": 1705,
+  "not_enrolled_count": 1706,
   "gender_counts": {
     "Male": 1186,
-    "Female": 787,
+    "Female": 788,
     "Other": 1,
     "Transgender": 1
   },
   "category_counts": {
     "OBC": 573,
-    "SC": 866,
+    "SC": 867,
     "General (Women)": 336,
     "EWS": 200
   },
   "course_counts": {
     "Multimedia and Animation Associate (NSQF Level 4)": 452,
     "VFX Associate (NSQF Level 4)": 258,
-    "3D Animator Assistant (NSQF Level 3)": 100,
+    "3D Animator Assistant (NSQF Level 3)": 101,
     "Jr. Web Designer (NSQF Level 4)": 123,
     "Graphics & Web Designer Assistant (NSQF Level 4)": 822,
     "Film Compositor Assistant (NSQF Level 4)": 34,
@@ -28,7 +28,7 @@
     "Other / Unspecified": 1
   },
   "qualification_counts": {
-    "12th / ITI": 978,
+    "12th / ITI": 979,
     "Degree / Graduation": 818,
     "Diploma": 132,
     "10th Pass": 46,
@@ -55055,6 +55055,34 @@
         "photo": "https://drive.google.com/open?id=18bqk7mrTOKf5H4hQkZoTOE3GzAmnEAKh",
         "identity": "https://drive.google.com/open?id=1VjQgRM-KCBM9DqS_gMvNYGAUcPZEWh98",
         "caste": "https://drive.google.com/open?id=10MI3WSV5izhkvsAAXOi8ogqhScwWGiFt"
+      },
+      "doc_count": 5,
+      "already_enrolled_at_idemi": false,
+      "enrollment_match_detail": ""
+    },
+    {
+      "id": 1976,
+      "sheet": "Main Data",
+      "timestamp": "10/23/2026 20:19:35",
+      "name": "Gauri Kanade",
+      "email": "gaurikanade30@gmail.com",
+      "father_name": "Chandrakant Karbhari Kanade",
+      "gender": "Female",
+      "category": "SC",
+      "raw_category": "Scheduled Castes (SC)",
+      "dob": "9/5/2006",
+      "qualification": "12th / ITI",
+      "address": "Panchsheel Nagar sion Koliwada somiya hospital near Mumbai 400022",
+      "whatsapp": "9324057514",
+      "alt_phone": "",
+      "course": "3D Animator Assistant (NSQF Level 3)",
+      "reference": "Rushika",
+      "documents": {
+        "hsc": "https://drive.google.com/open?id=1kDRd7qE-G2Fq-h0Mi4dk6NxE7RP6LVql",
+        "age_proof": "https://drive.google.com/open?id=1gTFlt4hG2O0VFEnz2WEiqdqYjrUr-Y4A",
+        "photo": "https://drive.google.com/open?id=1LTK5ZYhWmFTPbUDj6jwnITnKCwWrWaPN",
+        "identity": "https://drive.google.com/open?id=1wtNGkyt7S9Uct63OaC_i3KXuD61NGvdy",
+        "caste": "https://drive.google.com/open?id=1okat4rDlduXRF7iyratLwU8zw3OF8MRa"
       },
       "doc_count": 5,
       "already_enrolled_at_idemi": false,
