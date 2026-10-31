@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-10-31T12:03:53",
+  "generated_at": "2026-10-31T21:19:19",
   "source": "Google Sheets Live Sync",
-  "total_records": 1976,
+  "total_records": 1977,
   "already_enrolled_count": 270,
-  "not_enrolled_count": 1706,
+  "not_enrolled_count": 1707,
   "gender_counts": {
-    "Male": 1186,
+    "Male": 1187,
     "Female": 788,
     "Other": 1,
     "Transgender": 1
   },
   "category_counts": {
-    "OBC": 573,
+    "OBC": 574,
     "SC": 867,
     "General (Women)": 336,
     "EWS": 200
@@ -21,14 +21,14 @@
     "VFX Associate (NSQF Level 4)": 258,
     "3D Animator Assistant (NSQF Level 3)": 101,
     "Jr. Web Designer (NSQF Level 4)": 123,
-    "Graphics & Web Designer Assistant (NSQF Level 4)": 822,
+    "Graphics & Web Designer Assistant (NSQF Level 4)": 823,
     "Film Compositor Assistant (NSQF Level 4)": 34,
     "3D Printing": 143,
     "Sr. Technician -Mechatronics (NSQF Level 4.5)": 42,
     "Other / Unspecified": 1
   },
   "qualification_counts": {
-    "12th / ITI": 979,
+    "12th / ITI": 980,
     "Degree / Graduation": 818,
     "Diploma": 132,
     "10th Pass": 46,
@@ -55083,6 +55083,34 @@
         "photo": "https://drive.google.com/open?id=1LTK5ZYhWmFTPbUDj6jwnITnKCwWrWaPN",
         "identity": "https://drive.google.com/open?id=1wtNGkyt7S9Uct63OaC_i3KXuD61NGvdy",
         "caste": "https://drive.google.com/open?id=1okat4rDlduXRF7iyratLwU8zw3OF8MRa"
+      },
+      "doc_count": 5,
+      "already_enrolled_at_idemi": false,
+      "enrollment_match_detail": ""
+    },
+    {
+      "id": 1977,
+      "sheet": "Main Data",
+      "timestamp": "10/31/2026 23:01:28",
+      "name": "Sarthak",
+      "email": "guravsarthak242@gmail.com",
+      "father_name": "Raju",
+      "gender": "Male",
+      "category": "OBC",
+      "raw_category": "Other Backward Class (OBC)",
+      "dob": "12/16/2007",
+      "qualification": "12th / ITI",
+      "address": "Mumbai fort , Godrej bhavan somani marg",
+      "whatsapp": "9082662450",
+      "alt_phone": "9220777097",
+      "course": "Graphics & Web Designer Assistant (NSQF Level 4)",
+      "reference": "Social media advertisement",
+      "documents": {
+        "hsc": "https://drive.google.com/open?id=18Ifyb-6FI46_JGRBwWAGpnVYex4IJbR7",
+        "age_proof": "https://drive.google.com/open?id=14eR3tWl1Kyb32x0ZrNU3IT1iRkrOqd6J",
+        "photo": "https://drive.google.com/open?id=1_A1KlZbdseMeM1eeGvUVDuma5nEBn1kA",
+        "identity": "https://drive.google.com/open?id=1JU8DuW9-nxL3ZRROy8UnSe6GYZevjt2O, https://drive.google.com/open?id=1dgTJnjEplR_7RsRjiT-i9GR-XZ1oUoUk",
+        "caste": "https://drive.google.com/open?id=16mGVw8aredphR37CYPuoj_bFTgbggfYy"
       },
       "doc_count": 5,
       "already_enrolled_at_idemi": false,
