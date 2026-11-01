@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-10-31T21:19:19",
+  "generated_at": "2026-11-01T05:38:50",
   "source": "Google Sheets Live Sync",
-  "total_records": 1977,
+  "total_records": 1978,
   "already_enrolled_count": 270,
-  "not_enrolled_count": 1707,
+  "not_enrolled_count": 1708,
   "gender_counts": {
-    "Male": 1187,
+    "Male": 1188,
     "Female": 788,
     "Other": 1,
     "Transgender": 1
   },
   "category_counts": {
     "OBC": 574,
-    "SC": 867,
+    "SC": 868,
     "General (Women)": 336,
     "EWS": 200
   },
@@ -21,14 +21,14 @@
     "VFX Associate (NSQF Level 4)": 258,
     "3D Animator Assistant (NSQF Level 3)": 101,
     "Jr. Web Designer (NSQF Level 4)": 123,
-    "Graphics & Web Designer Assistant (NSQF Level 4)": 823,
+    "Graphics & Web Designer Assistant (NSQF Level 4)": 824,
     "Film Compositor Assistant (NSQF Level 4)": 34,
     "3D Printing": 143,
     "Sr. Technician -Mechatronics (NSQF Level 4.5)": 42,
     "Other / Unspecified": 1
   },
   "qualification_counts": {
-    "12th / ITI": 980,
+    "12th / ITI": 981,
     "Degree / Graduation": 818,
     "Diploma": 132,
     "10th Pass": 46,
@@ -55111,6 +55111,34 @@
         "photo": "https://drive.google.com/open?id=1_A1KlZbdseMeM1eeGvUVDuma5nEBn1kA",
         "identity": "https://drive.google.com/open?id=1JU8DuW9-nxL3ZRROy8UnSe6GYZevjt2O, https://drive.google.com/open?id=1dgTJnjEplR_7RsRjiT-i9GR-XZ1oUoUk",
         "caste": "https://drive.google.com/open?id=16mGVw8aredphR37CYPuoj_bFTgbggfYy"
+      },
+      "doc_count": 5,
+      "already_enrolled_at_idemi": false,
+      "enrollment_match_detail": ""
+    },
+    {
+      "id": 1978,
+      "sheet": "Main Data",
+      "timestamp": "11/1/2026 10:49:51",
+      "name": "Divesh Parakash Kamble",
+      "email": "kambledivesh423@gmail.com",
+      "father_name": "Prakash",
+      "gender": "Male",
+      "category": "SC",
+      "raw_category": "Scheduled Castes (SC)",
+      "dob": "3/31/2006",
+      "qualification": "12th / ITI",
+      "address": "Noormasjid captain sawant marg hillpark jogeshwari wast",
+      "whatsapp": "7620155765",
+      "alt_phone": "7620155765",
+      "course": "Graphics & Web Designer Assistant (NSQF Level 4)",
+      "reference": "Relative ki spelling",
+      "documents": {
+        "hsc": "https://drive.google.com/open?id=1fyBzBvw0cBu6OWh6C2I5PmsubFoByAiQ",
+        "age_proof": "https://drive.google.com/open?id=11Mjv-zXIOYr8ZTe5VpJG0JaVGFsdSK-D",
+        "photo": "https://drive.google.com/open?id=1eaSm15EZcdo4Qrwj-9Ob7cWpZUxT9elK",
+        "identity": "https://drive.google.com/open?id=1e7zcIGKJKKGH7hvvnPRCjUzsxCsvBBDr",
+        "caste": "https://drive.google.com/open?id=1b0NgfC7SiZ9KidflBpbYpYdXzsdRJZNi"
       },
       "doc_count": 5,
       "already_enrolled_at_idemi": false,
