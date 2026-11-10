@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-11-10T14:41:58",
+  "generated_at": "2026-11-10T23:05:58",
   "source": "Google Sheets Live Sync",
-  "total_records": 1978,
+  "total_records": 1979,
   "already_enrolled_count": 270,
-  "not_enrolled_count": 1708,
+  "not_enrolled_count": 1709,
   "gender_counts": {
-    "Male": 1188,
+    "Male": 1189,
     "Female": 788,
     "Other": 1,
     "Transgender": 1
   },
   "category_counts": {
     "OBC": 574,
-    "SC": 868,
+    "SC": 869,
     "General (Women)": 336,
     "EWS": 200
   },
@@ -22,14 +22,14 @@
     "3D Animator Assistant (NSQF Level 3)": 101,
     "Jr. Web Designer (NSQF Level 4)": 123,
     "Graphics & Web Designer Assistant (NSQF Level 4)": 824,
-    "Film Compositor Assistant (NSQF Level 4)": 34,
+    "Film Compositor Assistant (NSQF Level 4)": 35,
     "3D Printing": 143,
     "Sr. Technician -Mechatronics (NSQF Level 4.5)": 42,
     "Other / Unspecified": 1
   },
   "qualification_counts": {
     "12th / ITI": 981,
-    "Degree / Graduation": 818,
+    "Degree / Graduation": 819,
     "Diploma": 132,
     "10th Pass": 46,
     "m": 1
@@ -55139,6 +55139,34 @@
         "photo": "https://drive.google.com/open?id=1eaSm15EZcdo4Qrwj-9Ob7cWpZUxT9elK",
         "identity": "https://drive.google.com/open?id=1e7zcIGKJKKGH7hvvnPRCjUzsxCsvBBDr",
         "caste": "https://drive.google.com/open?id=1b0NgfC7SiZ9KidflBpbYpYdXzsdRJZNi"
+      },
+      "doc_count": 5,
+      "already_enrolled_at_idemi": false,
+      "enrollment_match_detail": ""
+    },
+    {
+      "id": 1979,
+      "sheet": "Main Data",
+      "timestamp": "11/11/2026 0:31:22",
+      "name": "Samadhan Ankush Sonwane",
+      "email": "samadhansonwane11@gmail.com",
+      "father_name": "Ankush Rangnath Sonwane",
+      "gender": "Male",
+      "category": "SC",
+      "raw_category": "Scheduled Castes (SC)",
+      "dob": "5/11/1995",
+      "qualification": "Degree / Graduation",
+      "address": "303, 3rd Floor, Gagan Prasad Building Society, near Ashirwad Mahila & Mitra Mandal, Shastri Nagar, Kalwa Naka, Thane 400605",
+      "whatsapp": "7350393711",
+      "alt_phone": "7715022020",
+      "course": "Film Compositor Assistant (NSQF Level 4)",
+      "reference": "Pawan Ghongade",
+      "documents": {
+        "graduation": "https://drive.google.com/open?id=1bfUSUYIsn_TWDx0fQvgxWL5T7VggBHYl",
+        "age_proof": "https://drive.google.com/open?id=17DjWZMLDhShqzOKMpe_bPh8EeIwUCV16",
+        "photo": "https://drive.google.com/open?id=1Y5bnt1jKVfQlLue0evPyPheBSiQaB6W4",
+        "identity": "https://drive.google.com/open?id=1f94dUiRIPiltiZmwrDCbg7xfVI7t1nlQ",
+        "caste": "https://drive.google.com/open?id=1UkhW63ZXoBfRAgqKElFx5oVyxKw1K5Ek"
       },
       "doc_count": 5,
       "already_enrolled_at_idemi": false,
