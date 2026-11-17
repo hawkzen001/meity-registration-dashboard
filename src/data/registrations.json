@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-11-17T01:48:42",
+  "generated_at": "2026-11-17T15:49:33",
   "source": "Google Sheets Live Sync",
-  "total_records": 1979,
+  "total_records": 1981,
   "already_enrolled_count": 270,
-  "not_enrolled_count": 1709,
+  "not_enrolled_count": 1711,
   "gender_counts": {
-    "Male": 1189,
-    "Female": 788,
+    "Male": 1190,
+    "Female": 789,
     "Other": 1,
     "Transgender": 1
   },
   "category_counts": {
     "OBC": 574,
-    "SC": 869,
-    "General (Women)": 336,
+    "SC": 870,
+    "General (Women)": 337,
     "EWS": 200
   },
   "course_counts": {
     "Multimedia and Animation Associate (NSQF Level 4)": 452,
-    "VFX Associate (NSQF Level 4)": 258,
-    "3D Animator Assistant (NSQF Level 3)": 101,
+    "VFX Associate (NSQF Level 4)": 259,
+    "3D Animator Assistant (NSQF Level 3)": 102,
     "Jr. Web Designer (NSQF Level 4)": 123,
     "Graphics & Web Designer Assistant (NSQF Level 4)": 824,
     "Film Compositor Assistant (NSQF Level 4)": 35,
@@ -28,8 +28,8 @@
     "Other / Unspecified": 1
   },
   "qualification_counts": {
-    "12th / ITI": 981,
-    "Degree / Graduation": 819,
+    "12th / ITI": 982,
+    "Degree / Graduation": 820,
     "Diploma": 132,
     "10th Pass": 46,
     "m": 1
@@ -55167,6 +55167,61 @@
         "photo": "https://drive.google.com/open?id=1Y5bnt1jKVfQlLue0evPyPheBSiQaB6W4",
         "identity": "https://drive.google.com/open?id=1f94dUiRIPiltiZmwrDCbg7xfVI7t1nlQ",
         "caste": "https://drive.google.com/open?id=1UkhW63ZXoBfRAgqKElFx5oVyxKw1K5Ek"
+      },
+      "doc_count": 5,
+      "already_enrolled_at_idemi": false,
+      "enrollment_match_detail": ""
+    },
+    {
+      "id": 1980,
+      "sheet": "Main Data",
+      "timestamp": "11/17/2026 14:40:21",
+      "name": "Lavannya Sanjay Chavan",
+      "email": "animation@idemi.org",
+      "father_name": "Sanjay Chavan",
+      "gender": "Female",
+      "category": "General (Women)",
+      "raw_category": "General (Women)",
+      "dob": "8/22/2008",
+      "qualification": "12th / ITI",
+      "address": "Banu Villa, B 303, Sonar Pada, Shankara Nagar, Kalyanshil Road, Near Neptune Hospital, Dombivli East, Mumbai - 421203",
+      "whatsapp": "8169005707",
+      "alt_phone": "9867669707",
+      "course": "3D Animator Assistant (NSQF Level 3)",
+      "reference": "Social Media Advertisement",
+      "documents": {
+        "hsc": "https://drive.google.com/open?id=1m6LRMOIVkhEt4wommH2oi0iHN3bu9k0K",
+        "age_proof": "https://drive.google.com/open?id=1EGTVNFSnhWjyuhxFRvgEz47BMZlE-KK1",
+        "photo": "https://drive.google.com/open?id=12wKUrf5Mo8oe9j5_5ifylq_Z0zvOleWZ",
+        "identity": "https://drive.google.com/open?id=1CmxckGKROXOvnNK2GNwQeVWEhxyRCmfe"
+      },
+      "doc_count": 4,
+      "already_enrolled_at_idemi": false,
+      "enrollment_match_detail": ""
+    },
+    {
+      "id": 1981,
+      "sheet": "Main Data",
+      "timestamp": "11/17/2026 16:38:50",
+      "name": "Sachin Chandrakant Shirsonkar",
+      "email": "sachslife@gmail.com",
+      "father_name": "Chandrakant Sakharam Shirsonkar",
+      "gender": "Male",
+      "category": "SC",
+      "raw_category": "Scheduled Castes (SC)",
+      "dob": "10/4/1981",
+      "qualification": "Degree / Graduation",
+      "address": "Flat No. 106, First Floor, Building No. A/5,\nSilver Green Valley CHS Ltd.,\nSurvey No. 17, Hissa No. 0,\nVillage Vichumbe, Tal. Panvel (East),\nNew Panvel - 410206. Dist. Raigad.",
+      "whatsapp": "9773615587",
+      "alt_phone": "",
+      "course": "VFX Associate (NSQF Level 4)",
+      "reference": "SANTOSH SHRIKANT PUROHIT",
+      "documents": {
+        "graduation": "https://drive.google.com/open?id=1_KkSvEaIPqu09QS-R_Xt990WPyPhEsmA",
+        "age_proof": "https://drive.google.com/open?id=1dH9J3MtDSHSy_PF0NXJWfWk0NdYGLXhe",
+        "photo": "https://drive.google.com/open?id=13yk8Q781V68FHK5oWhjghvVMMrdTLDdZ",
+        "identity": "https://drive.google.com/open?id=1q-BeegVvU45QcMBC89XTGZxrtVB_BA6X",
+        "caste": "https://drive.google.com/open?id=1iFwBA5YU6l93g6juMGGr9syyFxQQPpmN"
       },
       "doc_count": 5,
       "already_enrolled_at_idemi": false,
