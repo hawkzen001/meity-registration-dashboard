@@ -6,12 +6,7 @@ import {
   Eye, 
   EyeOff, 
   AlertCircle, 
-  CheckCircle2, 
-  KeyRound, 
-  ChevronDown, 
-  ChevronUp, 
-  Sparkles,
-  ExternalLink
+  KeyRound 
 } from 'lucide-react';
 import { decryptWithPassword, saveSession } from '../utils/crypto';
 
@@ -22,7 +17,6 @@ export default function AuthScreen({ encryptedEnvelope, onLoginSuccess }) {
   const [rememberMe, setRememberMe] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
-  const [showCredentialHints, setShowCredentialHints] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -55,12 +49,6 @@ export default function AuthScreen({ encryptedEnvelope, onLoginSuccess }) {
     } finally {
       setIsLoading(false);
     }
-  };
-
-  const handleFillDemo = (uname, pass) => {
-    setUsername(uname);
-    setPassword(pass);
-    setErrorMsg('');
   };
 
   return (
@@ -206,61 +194,6 @@ export default function AuthScreen({ encryptedEnvelope, onLoginSuccess }) {
             )}
           </button>
         </form>
-
-        {/* Credentials Reference Drawer (Convenience for Staff/Demo) */}
-        <div className="mt-6 pt-5 border-t border-[var(--border-color)]">
-          <button
-            type="button"
-            onClick={() => setShowCredentialHints(!showCredentialHints)}
-            className="w-full flex items-center justify-between text-xs text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-colors py-1"
-          >
-            <span className="flex items-center gap-1.5 font-medium">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              Default Authorized Accounts
-            </span>
-            {showCredentialHints ? (
-              <ChevronUp className="w-3.5 h-3.5" />
-            ) : (
-              <ChevronDown className="w-3.5 h-3.5" />
-            )}
-          </button>
-
-          {showCredentialHints && (
-            <div className="mt-3 space-y-2 text-xs bg-[var(--bg-surface)] p-3 rounded-xl border border-[var(--border-color)]">
-              <div className="flex items-center justify-between p-2 rounded-lg bg-[var(--bg-card)] border border-[var(--border-color)]">
-                <div>
-                  <div className="font-semibold text-[var(--text-primary)]">admin</div>
-                  <div className="text-[10px] text-[var(--text-muted)] font-mono">MeitY@Admin#2026</div>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => handleFillDemo('admin', 'MeitY@Admin#2026')}
-                  className="px-2 py-1 rounded bg-indigo-600/10 text-indigo-400 hover:bg-indigo-600/20 text-[11px] font-medium transition-colors"
-                >
-                  Use Admin
-                </button>
-              </div>
-
-              <div className="flex items-center justify-between p-2 rounded-lg bg-[var(--bg-card)] border border-[var(--border-color)]">
-                <div>
-                  <div className="font-semibold text-[var(--text-primary)]">idemi_staff</div>
-                  <div className="text-[10px] text-[var(--text-muted)] font-mono">IDEMI@Staff$2026</div>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => handleFillDemo('idemi_staff', 'IDEMI@Staff$2026')}
-                  className="px-2 py-1 rounded bg-indigo-600/10 text-indigo-400 hover:bg-indigo-600/20 text-[11px] font-medium transition-colors"
-                >
-                  Use Staff
-                </button>
-              </div>
-
-              <p className="text-[10px] text-[var(--text-muted)] pt-1 italic">
-                Tip: Passwords can be changed anytime in <code>scripts/auth_config.json</code> followed by running <code>python scripts/encrypt_data.py</code>.
-              </p>
-            </div>
-          )}
-        </div>
 
       </div>
 
