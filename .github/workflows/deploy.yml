@@ -33,7 +33,7 @@ jobs:
           python-version: '3.10'
 
       - name: Install Python dependencies
-        run: pip install openpyxl
+        run: pip install openpyxl cryptography
 
       - name: Sync Data from Google Sheets
         run: python scripts/generate_app_data.py

@@ -300,9 +300,25 @@ payload = {
     "records":                all_records,
 }
 
-with open("src/data/registrations.json", "w", encoding="utf-8") as f:
+# 1. Save unencrypted local copy for developer inspection (ignored in .gitignore)
+raw_backup_path = Path("src/data/registrations.raw.json")
+with open(raw_backup_path, "w", encoding="utf-8") as f:
     json.dump(payload, f, indent=2, ensure_ascii=False)
 
-print(f"\nDone! Exported {len(all_records):,} verified records to src/data/registrations.json")
-print(f"  • Already Enrolled: {already_enrolled_count}")
-print(f"  • Not Yet Enrolled (New Leads): {len(all_records) - already_enrolled_count}")
+# 2. Encrypt with AES-256-GCM for authorized users before writing to src/data/registrations.json
+try:
+    try:
+        from scripts.encrypt_data import encrypt_payload
+    except ModuleNotFoundError:
+        from encrypt_data import encrypt_payload
+    encrypted_payload = encrypt_payload(payload)
+    with open("src/data/registrations.json", "w", encoding="utf-8") as f:
+        json.dump(encrypted_payload, f, indent=2, ensure_ascii=False)
+    print(f"\nDone! Exported {len(all_records):,} verified records to src/data/registrations.json (AES-256 Encrypted)")
+    print(f"  • Already Enrolled: {already_enrolled_count}")
+    print(f"  • Not Yet Enrolled (New Leads): {len(all_records) - already_enrolled_count}")
+    print(f"  • Cryptographic Protection: Active (Authorized Staff Credentials Required)")
+except Exception as e:
+    print(f"[Warning] Encryption failed ({e}). Writing unencrypted fallback.")
+    with open("src/data/registrations.json", "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2, ensure_ascii=False)

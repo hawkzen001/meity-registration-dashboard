@@ -7,7 +7,9 @@ import {
   Moon, 
   Sparkles,
   FileSpreadsheet,
-  FileText
+  FileText,
+  UserCheck,
+  LogOut
 } from 'lucide-react';
 
 export default function Header({ 
@@ -17,7 +19,9 @@ export default function Header({
   isRefreshing, 
   onRefresh,
   totalRecords,
-  onOpenAiDrawer 
+  onOpenAiDrawer,
+  currentUser,
+  onLogout
 }) {
   return (
     <header className="sticky top-0 z-30 bg-opacity-80 backdrop-blur-md border-b border-[var(--border-color)] bg-[var(--bg-surface)] py-3 px-4 sm:px-6 md:px-8 shadow-sm">
@@ -115,6 +119,27 @@ export default function Header({
               <Moon className="w-4 h-4 text-indigo-600" />
             )}
           </button>
+
+          {/* Authenticated User & Sign Out */}
+          {currentUser && (
+            <div className="flex items-center gap-2 bg-[var(--bg-card)] border border-[var(--border-color)] px-2.5 py-1.5 rounded-lg text-xs">
+              <div className="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></div>
+              <span className="font-medium text-[var(--text-secondary)] hidden md:inline truncate max-w-[120px]">
+                {currentUser.name || currentUser.username}
+              </span>
+              <span className="text-[10px] font-mono uppercase px-1.5 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                {currentUser.role || 'staff'}
+              </span>
+              <button
+                onClick={onLogout}
+                title="Lock Portal / Sign Out"
+                className="ml-1 p-1 hover:bg-rose-500/10 text-[var(--text-muted)] hover:text-rose-400 rounded transition-colors flex items-center gap-1"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline text-[11px] font-medium">Lock</span>
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </header>

@@ -1,0 +1,17 @@
+{
+  "description": "Authorized accounts for IDEMI MeitY Registration Dashboard. Run 'python scripts/encrypt_data.py' after editing to re-encrypt data.",
+  "users": [
+    {
+      "username": "admin",
+      "name": "Project Administrator",
+      "password": "MeitY@Admin#2026",
+      "role": "admin"
+    },
+    {
+      "username": "idemi_staff",
+      "name": "IDEMI MeitY Staff",
+      "password": "IDEMI@Staff$2026",
+      "role": "staff"
+    }
+  ]
+}
